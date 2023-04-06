@@ -51,14 +51,26 @@ class Instructor(db.Model):
     last_name = db.Column(db.String(255), nullable=False)
     hire_date = db.Column(db.Date())
 
-
-
 # Schemas
+class StudentSchema(ma.Schema):
+    class Meta:
+        fields = ("id", "first_name", "last_name", "year", "gpa")
 
+student_schema = StudentSchema()
+students_schema = StudentSchema(many=True)
 
 # Resources
-
+class StudentListResource(Resource):
+    def get(self):
+        order = request.args.get('order')
+        query = Student.query
+        if order == "gpa":
+            query = query.order_by(Student.gpa.desc())
+        else:
+            query = query.order_by(order)
+        all_students = query.all()
+        return students_schema.dump(all_students)
 
 # Routes
-
+api.add_resource(StudentListResource, '/api/students/')
 
