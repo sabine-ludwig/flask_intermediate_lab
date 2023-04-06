@@ -77,7 +77,7 @@ class StudentListResource(Resource):
         all_students = query.all()
         return students_schema.dump(all_students)
     
-class FullCourseDetailResource(Resource):
+class FullCourseDetailResource(Resource): 
     def get(self, course_id):
         course = Course.query.get_or_404(course_id)
         instructor = Instructor.query.get_or_404(course.instructor_id)
@@ -91,5 +91,5 @@ class FullCourseDetailResource(Resource):
 
 # Routes
 api.add_resource(StudentListResource, '/api/students/')
-api.add_resource(FullCourseDetailResource), '/api/course_details/<int:course_id>'
+api.add_resource(FullCourseDetailResource, '/api/course_details/<int:course_id>')
 
