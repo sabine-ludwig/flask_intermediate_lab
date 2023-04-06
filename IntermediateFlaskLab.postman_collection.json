@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "b645376c-fcdc-48d7-ab98-96003eb8b07e",
+		"name": "IntermediateFlaskLab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13455599"
+	},
+	"item": [
+		{
+			"name": "Custom Dictionary Response",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/course_details/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"course_details",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Students By GPA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/students?order=gpa",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"students"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "gpa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Students (Default)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/students",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"students"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "gpa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Students By Last Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/students?order=gpa",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"students"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "gpa"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
